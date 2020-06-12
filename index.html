@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Unconv-posting.com</title>
+	<link rel="stylesheet" href="https://use.typekit.net/jio8yzv.css">
+	<script src="fabric.js"></script>
+	<style type="text/css">
+		
+		::selection {
+  		background: rgba(220, 220, 220);
+		}
+
+		.box {
+
+		    z-index: 100;
+  			width:100%;
+    		height: 60px;
+    		background-color: blue;
+    		position: fixed;
+    		overflow: hidden;
+    		top: 0; right: 0; bottom: 0; left: 0;
+		}
+
+		#titleElement {
+			font-size: 30px;
+		}
+		
+		canvas.canvasClass {
+			width: 100%;
+		}
+
+		.canvas-container {
+			height: 80px;
+		}
+
+		#mydivheader {
+		  padding: 10px;
+		  cursor: move;
+		  z-index: 9;
+		  background-color: #2196F3;
+		  color: #fff;
+		}
+		
+		::-webkit-scrollbar {
+    	display: auto;
+		}
+
+		/*
+		img{
+			left: 50vw; qui le cose restano al loro posto
+			cursor: move;
+  			width: 40vw;
+    		position: absolute;
+    		overflow: hidden;
+		} */
+
+		head{
+			overflow: hidden;
+			display: none;
+			position: fixed;
+		}
+
+		body{
+			margin-top: 60px;
+			/*background-origin: 0px 600px;*/
+			/*background-color: blue;*/
+		}
+
+		.title{
+			z-index: 101;
+			color: rgba(255, 255, 255);
+			font-family: "Helvetica", "Arial", Sans-Serif;
+			/*font-family: "shelleyregular";*/
+			font-weight: 400;
+			font-style: italic;
+			font-size: 30px;
+			position: fixed;
+			padding-left: 1vw;
+			top: -20px;
+			margin-top: 35px;	
+		}
+
+		.infoButton{
+			transition-duration: 1s;
+			z-index: 101;
+			background-color: blue;
+			color: rgba(255, 255, 255);
+			font-family: "Helvetica", "Arial", Sans-Serif;
+			/*font-family: "shelleyregular";*/
+			font-weight: 400;
+			font-style: normal;
+			font-size: 30px;
+			text-align: right;
+			position: fixed;
+			top: 0px;
+			margin-top: 10px;
+		}
+
+		.rotate{
+			transition-duration: 1s;
+			transform: rotate(45deg);
+		}
+
+		#credits{
+			background-color: "white";
+			color: rgba(100, 150, 0);
+			font-style: bold;
+			font-size: 30px;
+			padding-top: 4.4vw;
+		}
+
+		#img_1_info{
+			background-color: "white";
+			color: rgba(100, 150, 0);
+			font-style: bold;
+			font-size: 20px;
+			padding-top: 0px;
+			z-index: 200;
+			position: absolute;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.colonna_1 {
+			background-color: rgba(255, 255, 255);
+			color: blue;
+			font-style: bold;
+			font-size: 21px;
+			float: left;
+			width: 50%;
+			padding: 10px;
+			border: 2px solid blue;
+			height: 300px;
+			overflow: scroll;
+		}
+
+		.colonna_2 {
+			background-color: rgba(255, 255, 255);
+			color: blue;
+			font-style: bold;
+			font-size: 21px;
+			float: left;
+			width: 100%;
+			padding: 10px;
+			border: 2px solid blue;
+			height: 180px;
+			overflow: scroll;
+		}
+
+		.box_dida {
+			background-color: rgba(255, 255, 255);
+			color: blue;
+			font-style: normal;
+			font-size: 14px;
+			float: left;
+			width: 20vw;
+			height: 10vw;
+			border: 2px solid blue;
+			padding-left: 10px;
+		}
+
+
+		.containerCredits:after {
+		    width: 100%;
+		    margin: auto;
+		    content: "";
+  			display: table;
+  			clear: both;
+		}
+
+
+		.text{
+			color: rgba(255, 255, 255);
+			width: 90%;
+			font-size: 15px;
+			font-family: neue-haas-unica, sans-serif;
+			font-weight: 400;
+			font-style: bold;
+			line-height: 1.2;
+			/*text-indent: 2em;*/
+		}
+
+		.hidden{
+			display: none!important;
+		}
+
+		button{
+			position: fixed;
+			top: 50%;
+			margin-left: 94%;
+			border: none;
+
+		}
+
+		h3{
+			font-style: normal;
+			font-weight: 400;
+			font-size: 12px;
+			color: #c2c2c2;
+		}
+
+		img{
+			width: 100%;
+			margin-top: 0px;
+
+		}
+
+		img[alt~="1"] {
+	    	margin-left: 20vw;
+	    	width: 32vw;
+	    }
+
+	    	img[alt~="2"] {
+	    	margin-left: 10vw;
+	    	width: 36vw;
+		}
+
+			img[alt~="3"] {
+	    	margin-left: 5vw;
+	    	width: 40vw;
+		}
+
+			figcaption {
+	    	display: none;
+		}
+
+
+	</style>
+
+</head>
+
+<body onresize="resizeMe(canvas)" style="background-color: blue;">
+
+	<div class="box">
+		<div id="titleElement" class="title">
+			<div class="title">
+				<a>Unconventional Posting</a>
+			</div>
+		</div>
+		<div>
+			<button class="infoButton" id="chiudi" onclick="showInfo()">
+				<span>+</span>
+			</button>
+		</div>
+	</div>
+	<div id="credits" class="hidden">
+		<div class="containerCredits">
+			<div class="colonna_1">
+				<p>Unconventional Posting &egrave la condivisione in rete di un messaggio pubblico (<i>posting</i>) che contiene un&rsquo;informazione secondaria o nascosta, mediante un uso non convenzionale (<i>unconventional</i>) della piattaforma. Quest&rsquo;azione &egrave dettata dalla volont&agrave di condividere messaggi indirizzati a determinati gruppi di utenti, in modo che non siano bloccati o censurati dal sistema stesso.<br>
+In questo modo l&rsquo;informazione cambia forma, si mimetizza nel sistema imitandone caratteristiche e strutture, elude i controlli algoritmici. In un ambiente che privilegia la pervasivit&agrave della comunicazione, il messaggio si propaga in virt&ugrave non della propria trasparenza ma, al contrario, della propria complessit&agrave. Solo un utente attento e consapevole, un utente che possiede gli strumenti adeguati, pu&ograve accedere all&rsquo;informazione celata dietro/dentro il messaggio trasmesso. A questo serve la mentalit&agrave da <i>Easter egg hunt</i>, nata nell&rsquo;ambito del videogioco: l&rsquo;utente, alla ricerca di un contenuto nascosto che ricompensi il suo impegno, affronta la lettura di un testo sfruttando le proprie capacit&agrave di pensiero laterale.<br>Mostrando e discutendo le possibili modalit&agrave di trasmissione alternativa delle informazioni, il progetto <i>Unconventional Posting</i> vuole rendere l&rsquo;utente consapevole delle potenzialit&agrave espressive della rielaborazione dei messaggi, invitandolo ad agire indipendentemente dai sistemi e dalle piattaforme mainstream.
+</p>
+			</div>
+			<div class="colonna_1">
+				<p>Unconventional Posting is the <i>posting</i> on the net of a public message that contains secondary or hidden information, through an <i>unconventional</i> use of the platform. This action is dictated by the desire to share messages addressed to certain groups of users, so that they are not blocked or censored by the system itself.<br>
+In this way, information changes its shape, camouflages itself in the system by imitating its characteristics and structures, evades algorithmic controls. In an environment that favors the pervasiveness of communication, the message spreads by virtue not of its transparency but, on the contrary, of its complexity. Only a careful and aware user, a user who has the appropriate tools, can access the information hidden behind / inside the transmitted message. This is what the <i>Easter egg hunt</i> mentality, born in the field of video games, serves: the user, in search of hidden content that rewards his commitment, faces the reading of a text using his lateral thinking skills.<br>
+By showing and discussing the possible alternative means of transmitting information, the <i>Unconventional Posting</i> project aims to make the user aware of the expressive potential of message processing, inviting him to act independently of the mainstream systems and platforms.</p>
+			</div>
+			<div class="colonna_2">
+				<div id="extLink">
+					<p><b>LINK UTILI</b><br>
+
+						<ul class="sidelink">
+						<li>Quanti link utili!</li>
+						<li>Molto utili.</li>
+						<li class="freccia">Ecco un link utile ai
+							<a class="reg" href="https://drive.google.com/file/d/1kshNWwN0-2nMFXlBkQb_EoX6l7UX1fIS/view?usp=sharing" target="_blank">modelli d'azione
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div class="colonna_2">
+					<p><b>AUTORI</b><br>Paolo Barbieri, Eugenio Pancaldi<br>Carlo Andrea Schlatter, Benedetta Stefani<br>Esame di Modulo<br>2020 <a href="https://isiaurbino.net" target="_blank">ISIA URBINO</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+	</div>
+	<canvas class="canvasClass" id="c" width="400px" height="400px" style="border: 0px solid white; cursor: pointer; float: right;">
+	</canvas>
+	<img src="https://dp.isiaurbino.net/36358e90-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_1" style="display: none;" title="Piazza Tienanmen
+	riprodotta in Lego.">
+	<img src="https://dp.isiaurbino.net/3723e630-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_2" width="15px" style="display: none;" title="Tappeto con infografica
+	sul turismo in Cina.">
+	<img src="https://dp.isiaurbino.net/32fcd1c0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_3" style="display: none;" title="Meme su Xi Jinping
+	nascosti in un gioco.">
+	<img src="https://dp.isiaurbino.net/355344e0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_4" style="display: none;" title="Proteste per Hong Kong
+	dentro un videogioco.">
+	<img src="https://dp.isiaurbino.net/74addb60-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_5" style="display: none;" title="Una linea di vestiario
+	che nasconde testi.">
+	<img src="https://dp.isiaurbino.net/c4e76680-a062-11ea-9053-f9143a766a2d-400w.jpg" id="image_6" style="display: none;" title="La variante cinese
+	dell'hashtag #MeToo.">
+	<img src="https://dp.isiaurbino.net/336e7f50-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_7" style="display: none;" title="Il tutorial 'bait'
+	di Feroza Aziz.">
+	<img src="https://dp.isiaurbino.net/357d3b10-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_8" style="display: none;" title="Il messaggio nascosto
+	nel disco di Caparezza.">
+	<img src="https://dp.isiaurbino.net/33430280-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_9" style="display: none;" title="Libreria senza censure
+	costruita in Minecraft.">
+	<img src="https://dp.isiaurbino.net/343d19f0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_10" style="display: none;" title="L'ammiraglio Denton,
+	ostaggio in Vietnam.">
+
+
+
+	<img src="https://dp.isiaurbino.net/d311a720-a652-11ea-9053-f9143a766a2d.png" id="icon_1" style="display: none; z-index: 1;">
+
+	<div id="img_1_info" class="hidden">
+		<div class="containerCredits">
+			<div class="box_dida">
+				<p>Piazza Tienanmen<br>riprodotta in Lego.</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+
+	var canvas = new fabric.Canvas('c', { selection: false, preserveObjectStacking: false });
+	var canvasInfo = new fabric.Canvas('cInfo', { selection: false });
+
+	var grid = 44;
+
+	// create grid
+
+	for (var i = 0; i < (1984 / grid); i++) {
+	  canvas.add(new fabric.Line([ i * grid, 0, i * grid, 1984], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }));
+	  canvas.add(new fabric.Line([ 0, i * grid, 1984, i * grid], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }))
+	}
+
+	function loadImages() {
+		canvas.add(new fabric.Image(document.getElementById("icon_1"), {
+		  left: 44,
+		  top: 44,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.13,
+		  originY: 0.13,
+		  scaleX: 0.85,
+		  scaleY: 0.85,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+
+
+		canvas.add(new fabric.Image(document.getElementById("image_1"), {
+		  left: getRandomInt(0,5)*44,
+		  top: getRandomInt(0,5)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_2"), {
+		  left: getRandomInt(8,13)*44,
+		  top: getRandomInt(0,5)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_3"), {
+		  left: getRandomInt(0,5)*44,
+		  top: getRandomInt(8,13)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_4"), {
+		  left: getRandomInt(8,13)*44,
+		  top: getRandomInt(8,13)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_5"), {
+		  left: getRandomInt(0,5)*44,
+		  top: getRandomInt(16,21)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_6"), {
+		  left: getRandomInt(8,13)*44,
+		  top: getRandomInt(16,21)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_7"), {
+		  left: getRandomInt(0,5)*44,
+		  top: getRandomInt(24,29)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_8"), {
+		  left: getRandomInt(8,13)*44,
+		  top: getRandomInt(24,29)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_9"), {
+		  left: getRandomInt(0,5)*44,
+		  top: getRandomInt(34,39)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+		canvas.add(new fabric.Image(document.getElementById("image_10"), {
+		  left: getRandomInt(8,13)*44,
+		  top: getRandomInt(34,39)*44,
+		  angle: 0,
+		  opacity: 1,
+		}));
+	}
+
+	/*
+	canvas.add(new fabric.Textbox("ciao\nciao", { //hic liones
+		backgroundColor: "white",
+		color: "blue",
+		width: 100,
+		height: 400,
+		fontStyle: "normal",
+		fontSize: 24,
+		textAlign: "left",
+		zIndex: 200,
+		stroke: "blue",
+		hasControls: false,
+		hasBorders: false,
+		editable: false,
+	})); */
+
+	
+
+
+
+	/* var count = 0;
+
+	function dragElement(elmnt) {
+	  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+	  elmnt.onmousedown = dragMouseDown;
+
+	  function dragMouseDown(e) {
+	    e = e || window.event;
+	    e.preventDefault();
+	    // get the mouse cursor position at startup:
+	    pos3 = e.clientX;
+	    pos4 = e.clientY;
+	    document.onmouseup = closeDragElement;
+	    // call a function whenever the cursor moves:
+	    document.onmousemove = elementDrag;
+
+	    count ++; //metti sopra l'ultima pic mossa
+	    elmnt.style.zIndex = count; //come sopra
+	    console.log("ciao");
+	  }
+
+	  function elementDrag(e) {
+	    e = e || window.event;
+	    e.preventDefault();
+
+	    
+	    // calculate the new cursor position:
+	    pos1 = pos3 - e.clientX;
+	    pos2 = pos4 - e.clientY;
+	    pos3 = e.clientX;
+	    pos4 = e.clientY;
+	    // set the element's new position:
+	    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+	    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+	  }
+
+
+	  function closeDragElement() {
+	    // stop moving when mouse button is released:
+	    document.onmouseup = null;
+	    document.onmousemove = null;
+	  }
+	} */
+
+	const mainText = "Questo è un testo di prova per il sito Internet. Non modificare questo file. <p> Grazie."
+
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
+	}
+
+	function getRandomPosition(element) {
+		var x = document.body.offsetHeight-element.clientHeight;
+		var y = document.body.offsetWidth-element.clientWidth;
+		var randomX = Math.floor(Math.random()*x);
+		var randomY = Math.floor(Math.random()*y);
+		return [randomX,randomY];
+	}
+
+	window.onload = function() {
+		//var img = document.createElement('img');
+		//document.body.appendChild(image_1);
+		//var xy = getRandomPosition(image_1);
+		loadImages();
+	}
+
+	canvas.on('object:moving', function(options) { 
+	  options.target.set({
+	    left: Math.round(options.target.left / grid) * grid,
+	    top: Math.round(options.target.top / grid) * grid
+	  });
+	});
+
+	/*
+	const titleElement = document.createElement("h2");
+		titleElement.className = "title";
+		titleElement.innerHTML = "Unconventional Posting";
+		document.body.append(titleElement);
+
+	const infoButton = document.createElement("h2");
+		infoButton.className = "infoButton";
+		infoButton.innerHTML = "+";
+		document.body.append(infoButton);*/
+
+
+	function resizeMe(element) {
+		element.setZoom(window.innerWidth*0.001);
+		element.setWidth(window.innerWidth*0.97);
+		if (document.getElementById("credits").classList.contains("hidden")) {
+			element.setHeight(window.innerWidth*2);
+		} else {
+			element.setHeight(window.innerWidth*0.1);
+		}
+	}
+
+
+	resizeMe(canvas);
+
+	/*
+	canvas.setWidth(originalWidth * canvas.getZoom());
+	canvas.setHeight(originalHeight * canvas.getZoom());*/
+
+	var diceIcon = document.getElementById("box");
+	/*var diceIcon = canvas.getObjects()[92];*/
+
+	/*diceIcon.onclick = function() {
+		console.log("ciao");
+	}
+	console.log(diceIcon);*/
+
+
+
+	canvas.on('mouse:dblclick', function (e) {
+	  //check if user clicked an object
+	  if (e.target.cacheKey === "texture0" || e.target.cacheKey === "texture11" || e.target.cacheKey === "texture22" || e.target.cacheKey === "texture33" || e.target.cacheKey === "texture44" || e.target.cacheKey === "texture55" || e.target.cacheKey === "texture66" || e.target.cacheKey === "texture77" || e.target.cacheKey === "texture88" || e.target.cacheKey === "texture99") {
+	  	//console.log(canvas._objects[93].left);
+	  	//canvas._objects[93].left = (getRandomInt(0,5)*44) + "px";
+	  	canvas.clear();
+		// create grid
+		for (var i = 0; i < (1984 / grid); i++) {
+		  canvas.add(new fabric.Line([ i * grid, 0, i * grid, 1984], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }));
+		  canvas.add(new fabric.Line([ 0, i * grid, 1984, i * grid], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }))
+		}
+	  	loadImages();
+
+	  }
+	});
+
+	/*
+	canvas.on('mouse:over', function (e) {
+
+		var j = window.event;
+
+	    var posX = j.clientX;
+	    var posY = j.clientY;
+	    var subject = canvas._objects[93]
+	    var actualWidth = ((subject.width)*(subject.scaleX));
+	    var actualHeight = ((subject.height)*(subject.scaleY))
+
+	    if ((posX + 8 > subject.left) && (posY > subject.top) && (posX < (subject.left + actualWidth)) && (posY < (subject.top + actualHeight)) ) {
+
+	    	//document.getElementById("img_1_info").classList.toggle("hidden");
+	    	//console.log(window.innerWidth*0.97);
+	    	document.getElementById("img_1_info").style.display = "unset";
+	    	//console.log(subject.left);
+	    	//console.log(subject.top*(window.innerWidth*2));
+	    	//console.log((subject.left + actualWidth)*(window.innerWidth*0.97));
+	    	//console.log((subject.top + actualWidth)*(window.innerWidth*2));
+	    	//console.log(document.getElementById("img_1_info").style.display);
+
+			document.getElementById("img_1_info").style.left = posX + "px";
+	    	document.getElementById("img_1_info").style.top = posY + "px";
+	    } else {
+	    	document.getElementById("img_1_info").style.display = "none";
+	    }
+
+	    
+		if (e.target.cacheKey === "texture1") {
+
+			//document.getElementById("img_1_info").classList.toggle("hidden");
+			//console.log(document.getElementById("img_1_info").classList.contains("hidden"));
+			document.getElementById("img_1_info").style.left = posX + "px";
+	    	document.getElementById("img_1_info").style.top = posY + "px";
+
+			console.log(document.getElementById("img_1_info"));
+		}
+	});*/
+
+
+// showCaptions
+	var text = new fabric.Text(document.getElementById("image_1").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group = new fabric.Group([ rect, text ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture1"){
+			var p = canvas.getPointer(e.e);
+		    group.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture1"){
+			group.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+
+
+	var text_2 = new fabric.Text(document.getElementById("image_2").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_2 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_2 = new fabric.Group([ rect_2, text_2 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_2.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture2"){
+			var p = canvas.getPointer(e.e);
+		    group_2.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_2);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture2"){
+			group_2.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_3 = new fabric.Text(document.getElementById("image_3").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_3 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_3 = new fabric.Group([ rect_3, text_3 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_3.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture3"){
+			var p = canvas.getPointer(e.e);
+		    group_3.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_3);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture3"){
+			group_3.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_4 = new fabric.Text(document.getElementById("image_4").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_4 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_4 = new fabric.Group([ rect_4, text_4 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_4.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture4"){
+			var p = canvas.getPointer(e.e);
+		    group_4.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_4);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture4"){
+			group_4.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_5 = new fabric.Text(document.getElementById("image_5").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_5 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_5 = new fabric.Group([ rect_5, text_5 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_5.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture5"){
+			var p = canvas.getPointer(e.e);
+		    group_5.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_5);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture5"){
+			group_5.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_6 = new fabric.Text(document.getElementById("image_6").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_6 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_6 = new fabric.Group([ rect_6, text_6 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_6.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture6"){
+			var p = canvas.getPointer(e.e);
+		    group_6.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_6);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture6"){
+			group_6.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+	//
+	var text_7 = new fabric.Text(document.getElementById("image_7").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_7 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_7 = new fabric.Group([ rect_7, text_7 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_7.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture7"){
+			var p = canvas.getPointer(e.e);
+		    group_7.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_7);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture7"){
+			group_7.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_8 = new fabric.Text(document.getElementById("image_8").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_8 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_8 = new fabric.Group([ rect_8, text_8 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_8.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture8"){
+			var p = canvas.getPointer(e.e);
+		    group_8.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_8);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture8"){
+			group_8.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_9 = new fabric.Text(document.getElementById("image_9").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_9 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_9 = new fabric.Group([ rect_9, text_9 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_9.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture9"){
+			var p = canvas.getPointer(e.e);
+		    group_9.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_9);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture9"){
+			group_9.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//
+	var text_10 = new fabric.Text(document.getElementById("image_10").title, {
+	    fontSize: 20,
+	    fill: 'rgba(0,0,255)',
+	    top: 5,
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rect_10 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var group_10 = new fabric.Group([ rect_10, text_10 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (text_10.width*1.2),
+	});
+	canvas.renderAll();
+	canvas.on('mouse:move', function(e) {
+		if (e.target.cacheKey === "texture10"){
+			var p = canvas.getPointer(e.e);
+		    group_10.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(group_10);
+			canvas.renderAll();
+		}
+	});
+	canvas.on('mouse:out', function(e) {
+		if (e.target.cacheKey === "texture10"){
+			group_10.set({
+		    	visible: false,
+		    });
+			e.target.set("opacity", "1");
+			canvas.renderAll();
+		}
+	});
+//fine showCaption
+
+
+	function showInfo() {
+
+		document.getElementById("chiudi").classList.toggle("rotate");
+		document.getElementById("c").classList.toggle("hidden");
+		document.getElementById("credits").classList.toggle("hidden");
+		if (document.getElementById("credits").classList.contains("hidden")) {
+			canvas.setHeight(window.innerWidth*2);
+		} else {
+			canvas.setHeight(100);
+		}
+		//document.body.background_color("rgba(255,0,0)");
+	    //document.getElementById("titleElement").classList.toggle("hidden");
+	    //document.getElementById("credits").classList.toggle("hidden");
+
+	    if (document.body.style.backgroundColor === "blue") {
+	    	document.body.style.backgroundColor = "white";
+	    	return;
+	    } if (document.body.style.backgroundColor === "white") {
+	    	document.body.style.backgroundColor = "blue";
+	    	return;
+	    }
+	    
+	}
+
+</script>
+</html>
