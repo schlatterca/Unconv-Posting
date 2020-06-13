@@ -285,30 +285,31 @@ By showing and discussing the possible alternative means of transmitting informa
 	</div>
 	<canvas class="canvasClass" id="c" width="400px" height="400px" style="border: 0px solid white; cursor: pointer; float: right;">
 	</canvas>
-	<img src="https://dp.isiaurbino.net/74fc97a0-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_1" style="display: none;" title="Piazza Tienanmen
+	<img src="https://dp.isiaurbino.net/36358e90-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_1" style="display: none;" title="Piazza Tienanmen
 	riprodotta in Lego.">
-	<img src="https://dp.isiaurbino.net/71553a80-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_2" width="15px" style="display: none;" title="Tappeto con infografica
+	<img src="https://dp.isiaurbino.net/3723e630-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_2" width="15px" style="display: none;" title="Tappeto con infografica
 	sul turismo in Cina.">
-	<img src="https://dp.isiaurbino.net/71e56c90-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_3" style="display: none;" title="Meme su Xi Jinping
+	<img src="https://dp.isiaurbino.net/32fcd1c0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_3" style="display: none;" title="Meme su Xi Jinping
 	nascosti in un gioco.">
-	<img src="https://dp.isiaurbino.net/741ee1d0-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_4" style="display: none;" title="Proteste per Hong Kong
+	<img src="https://dp.isiaurbino.net/355344e0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_4" style="display: none;" title="Proteste per Hong Kong
 	dentro un videogioco.">
 	<img src="https://dp.isiaurbino.net/74addb60-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_5" style="display: none;" title="Una linea di vestiario
 	che nasconde testi.">
 	<img src="https://dp.isiaurbino.net/c4e76680-a062-11ea-9053-f9143a766a2d-400w.jpg" id="image_6" style="display: none;" title="La variante cinese
 	dell'hashtag #MeToo.">
-	<img src="https://dp.isiaurbino.net/72523820-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_7" style="display: none;" title="Il tutorial 'bait'
+	<img src="https://dp.isiaurbino.net/336e7f50-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_7" style="display: none;" title="Il tutorial 'bait'
 	di Feroza Aziz.">
-	<img src="https://dp.isiaurbino.net/74497440-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_8" style="display: none;" title="Il messaggio nascosto
+	<img src="https://dp.isiaurbino.net/357d3b10-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_8" style="display: none;" title="Il messaggio nascosto
 	nel disco di Caparezza.">
-	<img src="https://dp.isiaurbino.net/7225d0f0-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_9" style="display: none;" title="Libreria senza censure
+	<img src="https://dp.isiaurbino.net/33430280-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_9" style="display: none;" title="Libreria senza censure
 	costruita in Minecraft.">
-	<img src="https://dp.isiaurbino.net/731e13a0-a6af-11ea-9053-f9143a766a2d-400w.jpg" id="image_10" style="display: none;" title="L'ammiraglio Denton,
+	<img src="https://dp.isiaurbino.net/343d19f0-a69c-11ea-9053-f9143a766a2d-400w.jpg" id="image_10" style="display: none;" title="L'ammiraglio Denton,
 	ostaggio in Vietnam.">
 
 
 
 	<img src="https://dp.isiaurbino.net/d311a720-a652-11ea-9053-f9143a766a2d.png" id="icon_1" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/qrcode.png" id="icon_2" style="display: none; z-index: 1;">
 
 	<div id="img_1_info" class="hidden">
 		<div class="containerCredits">
@@ -345,6 +346,22 @@ By showing and discussing the possible alternative means of transmitting informa
 		  originY: 0.13,
 		  scaleX: 0.85,
 		  scaleY: 0.85,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+		canvas.add(new fabric.Image(document.getElementById("icon_2"), {
+		  left: 836,
+		  top: 440,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.04,
+		  originY: 0.04,
+		  scaleX: 0.83,
+		  scaleY: 0.83,
 		  hoverCursor: 1,
 		  moveCursor: 1,
 		  hasBorders: false,
@@ -528,7 +545,7 @@ By showing and discussing the possible alternative means of transmitting informa
 		if (document.getElementById("credits").classList.contains("hidden")) {
 			element.setHeight(window.innerWidth*2);
 		} else {
-			element.setHeight(window.innerWidth*0.1);
+			element.setHeight(window.innerWidth*0.01);
 		}
 	}
 
@@ -542,16 +559,11 @@ By showing and discussing the possible alternative means of transmitting informa
 	var diceIcon = document.getElementById("box");
 	/*var diceIcon = canvas.getObjects()[92];*/
 
-	/*diceIcon.onclick = function() {
-		console.log("ciao");
-	}
-	console.log(diceIcon);*/
-
 
 
 	canvas.on('mouse:dblclick', function (e) {
 	  //check if user clicked an object
-	  if (e.target.cacheKey === "texture0" || e.target.cacheKey === "texture11" || e.target.cacheKey === "texture22" || e.target.cacheKey === "texture33" || e.target.cacheKey === "texture44" || e.target.cacheKey === "texture55" || e.target.cacheKey === "texture66" || e.target.cacheKey === "texture77" || e.target.cacheKey === "texture88" || e.target.cacheKey === "texture99") {
+	  if (e.target._element.id === "icon_1") {
 	  	//console.log(canvas._objects[93].left);
 	  	//canvas._objects[93].left = (getRandomInt(0,5)*44) + "px";
 	  	canvas.clear();
@@ -562,6 +574,10 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	  	loadImages();
 
+	  }
+
+	  if (e.target._element.id === "icon_2") {
+	  	window.open("https://schlatterca.github.io/Unconv-Posting/qrcode.html",'qrcode');
 	  }
 	});
 
@@ -631,7 +647,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture1"){
+		if (e.target._originalElement.id === "image_1"){
 			var p = canvas.getPointer(e.e);
 		    group.set({
 		    	left: p.x + 10,
@@ -644,11 +660,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture1"){
+		if (e.target.opacity === "0.5"){
 			group.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group);
 			canvas.renderAll();
 		}
 	});
@@ -678,7 +695,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture2"){
+		if (e.target._originalElement.id === "image_2"){
 			var p = canvas.getPointer(e.e);
 		    group_2.set({
 		    	left: p.x + 10,
@@ -691,11 +708,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture2"){
+		if (e.target.opacity === "1"){
 			group_2.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_2);
 			canvas.renderAll();
 		}
 	});
@@ -724,7 +742,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture3"){
+		if (e.target._originalElement.id === "image_3"){
 			var p = canvas.getPointer(e.e);
 		    group_3.set({
 		    	left: p.x + 10,
@@ -737,11 +755,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture3"){
+		if (e.target.opacity === "1"){
 			group_3.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_3);
 			canvas.renderAll();
 		}
 	});
@@ -770,7 +789,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture4"){
+		if (e.target._originalElement.id === "image_4"){
 			var p = canvas.getPointer(e.e);
 		    group_4.set({
 		    	left: p.x + 10,
@@ -783,11 +802,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture4"){
+		if (e.target.opacity === "1"){
 			group_4.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_4);
 			canvas.renderAll();
 		}
 	});
@@ -816,7 +836,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture5"){
+		if (e.target._originalElement.id === "image_5"){
 			var p = canvas.getPointer(e.e);
 		    group_5.set({
 		    	left: p.x + 10,
@@ -829,11 +849,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture5"){
+		if (e.target.opacity === "1"){
 			group_5.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_5);
 			canvas.renderAll();
 		}
 	});
@@ -862,7 +883,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture6"){
+		if (e.target._originalElement.id === "image_6"){
 			var p = canvas.getPointer(e.e);
 		    group_6.set({
 		    	left: p.x + 10,
@@ -875,11 +896,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture6"){
+		if (e.target.opacity === "1"){
 			group_6.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_6);
 			canvas.renderAll();
 		}
 	});
@@ -908,7 +930,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture7"){
+		if (e.target._originalElement.id === "image_7"){
 			var p = canvas.getPointer(e.e);
 		    group_7.set({
 		    	left: p.x + 10,
@@ -921,11 +943,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture7"){
+		if (e.target.opacity === "1"){
 			group_7.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_7);
 			canvas.renderAll();
 		}
 	});
@@ -954,7 +977,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture8"){
+		if (e.target._originalElement.id === "image_8"){
 			var p = canvas.getPointer(e.e);
 		    group_8.set({
 		    	left: p.x + 10,
@@ -967,11 +990,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture8"){
+		if (e.target.opacity === "1"){
 			group_8.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_8);
 			canvas.renderAll();
 		}
 	});
@@ -1000,7 +1024,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture9"){
+		if (e.target._originalElement.id === "image_9"){
 			var p = canvas.getPointer(e.e);
 		    group_9.set({
 		    	left: p.x + 10,
@@ -1013,11 +1037,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture9"){
+		if (e.target.opacity === "1"){
 			group_9.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_9);
 			canvas.renderAll();
 		}
 	});
@@ -1046,7 +1071,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target.cacheKey === "texture10"){
+		if (e.target._originalElement.id === "image_10"){
 			var p = canvas.getPointer(e.e);
 		    group_10.set({
 		    	left: p.x + 10,
@@ -1059,11 +1084,12 @@ By showing and discussing the possible alternative means of transmitting informa
 		}
 	});
 	canvas.on('mouse:out', function(e) {
-		if (e.target.cacheKey === "texture10"){
+		if (e.target.opacity === "1"){
 			group_10.set({
 		    	visible: false,
 		    });
 			e.target.set("opacity", "1");
+			canvas.remove(group_10);
 			canvas.renderAll();
 		}
 	});
