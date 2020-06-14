@@ -266,7 +266,7 @@ By showing and discussing the possible alternative means of transmitting informa
 						<li>Quanti link utili!</li>
 						<li>Molto utili.</li>
 						<li class="freccia">Ecco un link utile ai
-							<a class="reg" href="https://drive.google.com/file/d/1kshNWwN0-2nMFXlBkQb_EoX6l7UX1fIS/view?usp=sharing" target="_blank">modelli d'azione
+							<a class="reg" href="https://docs.google.com/document/d/1KxvTRuJ_9dKM4uMmqG9yTzyFnHsXg19uXOttfwNKRRE/edit?usp=sharing" target="_blank">modelli d'azione
 							</a>
 						</li>
 					</ul>
@@ -275,6 +275,7 @@ By showing and discussing the possible alternative means of transmitting informa
 			<div>
 				<div class="colonna_2">
 					<p><b>AUTORI</b><br>Paolo Barbieri, Eugenio Pancaldi<br>Carlo Andrea Schlatter, Benedetta Stefani<br>Esame di Modulo<br>2020 <a href="https://isiaurbino.net" target="_blank">ISIA URBINO</a>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>AUTORI</b><br>Paolo Barbieri, Eugenio Pancaldi<br>Carlo Andrea Schlatter, Benedetta Stefani<br>Esame di Modulo<br>2020 <a href="https://isiaurbino.net" target="_blank">ISIA URBINO<br></a><i>...ancora qui?</i>
 					</p>
 				</div>
 			</div>
@@ -310,6 +311,7 @@ By showing and discussing the possible alternative means of transmitting informa
 
 	<img src="https://dp.isiaurbino.net/d311a720-a652-11ea-9053-f9143a766a2d.png" id="icon_1" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/qrcode.png" id="icon_2" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Painting.png" id="icon_3" style="display: none; z-index: 1;">
 
 	<div id="img_1_info" class="hidden">
 		<div class="containerCredits">
@@ -362,6 +364,22 @@ By showing and discussing the possible alternative means of transmitting informa
 		  originY: 0.04,
 		  scaleX: 0.83,
 		  scaleY: 0.83,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+		canvas.add(new fabric.Image(document.getElementById("icon_3"), {
+		  left: 220,
+		  top: 880,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.13,
+		  originY: 0.15,
+		  scaleX: 0.75,
+		  scaleY: 0.75,
 		  hoverCursor: 1,
 		  moveCursor: 1,
 		  hasBorders: false,
@@ -568,6 +586,22 @@ By showing and discussing the possible alternative means of transmitting informa
 
 	  if (e.target._element.id === "icon_2") {
 	  	window.open("https://schlatterca.github.io/Unconv-Posting/qrcode.html",'qrcode');
+	  }
+
+	  if (e.target._element.id === "icon_3") {
+	  	if (document.body.style.backgroundColor === "blue") {
+	    	document.body.style.backgroundColor = "magenta";
+	    	return;
+	    } if (document.body.style.backgroundColor === "magenta") {
+	    	document.body.style.backgroundColor = "lime";
+	    	return;
+	    } if (document.body.style.backgroundColor === "lime") {
+	    	document.body.style.backgroundColor = "yellow";
+	    	return;
+	    } if (document.body.style.backgroundColor === "yellow") {
+	    	document.body.style.backgroundColor = "blue";
+	    	return;
+	    }
 	  }
 	});
 
@@ -1100,7 +1134,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	    //document.getElementById("titleElement").classList.toggle("hidden");
 	    //document.getElementById("credits").classList.toggle("hidden");
 
-	    if (document.body.style.backgroundColor === "blue") {
+	    if ((document.body.style.backgroundColor === "blue") || (document.body.style.backgroundColor === "magenta") || (document.body.style.backgroundColor === "lime") || (document.body.style.backgroundColor === "yellow")) {
 	    	document.body.style.backgroundColor = "white";
 	    	return;
 	    } if (document.body.style.backgroundColor === "white") {
