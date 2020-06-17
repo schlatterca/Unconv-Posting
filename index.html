@@ -21,10 +21,6 @@
     		overflow: hidden;
     		top: 0; right: 0; bottom: 0; left: 0;
 		}
-
-		#titleElement {
-			font-size: 30px;
-		}
 		
 		canvas.canvasClass {
 			width: 100%;
@@ -55,6 +51,16 @@
     		overflow: hidden;
 		} */
 
+		@font-face {
+		    font-family: 'ShelleyAllegroBT';
+		    src: url('ShelleyAllegroBT') format('embedded-opentype'),
+		         url('shelleyallegrobt-webfont.woff') format('woff'),
+		         url('ShelleyAllegroBT.ttf') format('truetype');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
 		head{
 			overflow: hidden;
 			display: none;
@@ -67,18 +73,23 @@
 			/*background-color: blue;*/
 		}
 
-		.title{
+		#title{
 			z-index: 101;
 			color: rgba(255, 255, 255);
-			font-family: "Helvetica", "Arial", Sans-Serif;
-			/*font-family: "shelleyregular";*/
+			
+			font-family: "Helvetica", Sans-Serif;
+			font-size: 30px;
 			font-weight: 400;
+			top: -20px;
+			/*font-family: "ShelleyAllegroBT";
+			font-size: 37px;
+			font-weight: 600;
+			top: -30px;*/
+
 			font-style: italic;
 			letter-spacing: 0.5px;
-			font-size: 30px;
 			position: fixed;
 			padding-left: 1vw;
-			top: -20px;
 			margin-top: 35px;	
 		}
 
@@ -122,17 +133,37 @@
 
 		* {
 			box-sizing: border-box;
+
+			margin-block-start: 0em;
+			margin-block-end: 0em;
 		}
 
 		.colonna_1 {
 			background-color: rgba(255, 255, 255);
 			color: blue;
+			font-family: "Helvetica", "Arial", Sans-Serif;
 			font-style: bold;
 			font-size: 21px;
 			float: left;
 			width: 50%;
 			padding: 10px;
 			border: 2px solid blue;
+			border-style: solid hidden hidden solid;
+			height: 300px;
+			overflow: scroll;
+		}
+
+		.colonna_1_bis {
+			background-color: rgba(255, 255, 255);
+			color: blue;
+			font-family: "Helvetica", "Arial", Sans-Serif;
+			font-style: bold;
+			font-size: 21px;
+			float: left;
+			width: 50%;
+			padding: 10px;
+			border: 2px solid blue;
+			border-style: solid solid hidden solid;
 			height: 300px;
 			overflow: scroll;
 		}
@@ -140,12 +171,29 @@
 		.colonna_2 {
 			background-color: rgba(255, 255, 255);
 			color: blue;
+			font-family: "Helvetica", "Arial", Sans-Serif;
 			font-style: bold;
 			font-size: 21px;
 			float: left;
 			width: 100%;
 			padding: 10px;
 			border: 2px solid blue;
+			border-style: solid solid hidden solid;
+			height: 180px;
+			overflow: scroll;
+		}
+
+		.colonna_2_bis {
+			background-color: rgba(255, 255, 255);
+			color: blue;
+			font-family: "Helvetica", "Arial", Sans-Serif;
+			font-style: bold;
+			font-size: 21px;
+			float: left;
+			width: 100%;
+			padding: 10px;
+			border: 2px solid blue;
+			border-style: solid solid solid solid;
 			height: 180px;
 			overflow: scroll;
 		}
@@ -153,6 +201,7 @@
 		.box_dida {
 			background-color: rgba(255, 255, 255);
 			color: blue;
+			font-family: "Helvetica", "Arial", Sans-Serif;
 			font-style: normal;
 			font-size: 14px;
 			float: left;
@@ -235,7 +284,7 @@
 <body onresize="resizeMe(canvas)" style="background-color: blue;">
 
 	<div id="box">
-		<div id="titleElement" class="title">
+		<div id="title">
 			<div class="title">
 				<a>Unconventional Posting</a>
 			</div>
@@ -249,14 +298,13 @@
 	<div id="credits" class="hidden">
 		<div class="containerCredits">
 			<div class="colonna_1">
-				<p>Unconventional Posting &egrave la condivisione in rete di un messaggio pubblico (<i>posting</i>) che contiene un&rsquo;informazione secondaria o nascosta, mediante un uso non convenzionale (<i>unconventional</i>) della piattaforma. Quest&rsquo;azione &egrave dettata dalla volont&agrave di condividere messaggi indirizzati a determinati gruppi di utenti, in modo che non siano bloccati o censurati dal sistema stesso.<br>
-In questo modo l&rsquo;informazione cambia forma, si mimetizza nel sistema imitandone caratteristiche e strutture, elude i controlli algoritmici. In un ambiente che privilegia la pervasivit&agrave della comunicazione, il messaggio si propaga in virt&ugrave non della propria trasparenza ma, al contrario, della propria complessit&agrave. Solo un utente attento e consapevole, un utente che possiede gli strumenti adeguati, pu&ograve accedere all&rsquo;informazione celata dietro/dentro il messaggio trasmesso. A questo serve la mentalit&agrave da <i>Easter egg hunt</i>, nata nell&rsquo;ambito del videogioco: l&rsquo;utente, alla ricerca di un contenuto nascosto che ricompensi il suo impegno, affronta la lettura di un testo sfruttando le proprie capacit&agrave di pensiero laterale.<br>Mostrando e discutendo le possibili modalit&agrave di trasmissione alternativa delle informazioni, il progetto <i>Unconventional Posting</i> vuole rendere l&rsquo;utente consapevole delle potenzialit&agrave espressive della rielaborazione dei messaggi, invitandolo ad agire indipendentemente dai sistemi e dalle piattaforme mainstream.
+				<p><i>Unconventional Posting</i> &egrave la condivisione in rete di un messaggio pubblico (<i>posting</i>) che contiene un&rsquo;informazione secondaria o nascosta, mediante un uso non convenzionale (<i>unconventional</i>) della piattaforma. Quest&rsquo;azione &egrave dettata dalla volont&agrave di condividere messaggi indirizzati a determinati gruppi di utenti, in modo che non siano bloccati o censurati dal sistema stesso.<br>
+In questo modo l&rsquo;informazione cambia forma, si mimetizza nel sistema imitandone caratteristiche e strutture, elude i controlli algoritmici. In un ambiente che privilegia la pervasivit&agrave della comunicazione, il messaggio si propaga in virt&ugrave non della propria trasparenza ma, al contrario, della propria complessit&agrave. Solo un utente attento e consapevole &mdash; un utente che possiede gli strumenti adeguati &mdash; pu&ograve accedere all&rsquo;informazione celata dietro/dentro il messaggio trasmesso. A questo serve la mentalit&agrave da <i>Easter egg hunt</i>, nata nell&rsquo;ambito del videogioco: l&rsquo;utente, alla ricerca di un contenuto nascosto che ricompensi il suo impegno, affronta la lettura di un testo sfruttando le proprie capacit&agrave di pensiero laterale. Mostrando e discutendo le possibili modalit&agrave di trasmissione alternativa delle informazioni, il progetto <i>Unconventional Posting</i> vuole rendere l&rsquo;utente consapevole delle potenzialit&agrave espressive della rielaborazione dei messaggi, invitandolo ad agire indipendentemente dai sistemi e dalle piattaforme mainstream.
 </p>
 			</div>
-			<div class="colonna_1">
-				<p>Unconventional Posting is the <i>posting</i> on the net of a public message that contains secondary or hidden information, through an <i>unconventional</i> use of the platform. This action is dictated by the desire to share messages addressed to certain groups of users, so that they are not blocked or censored by the system itself.<br>
-In this way, information changes its shape, camouflages itself in the system by imitating its characteristics and structures, evades algorithmic controls. In an environment that favors the pervasiveness of communication, the message spreads by virtue not of its transparency but, on the contrary, of its complexity. Only a careful and aware user, a user who has the appropriate tools, can access the information hidden behind/inside the transmitted message. This is what the <i>Easter egg hunt</i> mentality, born in the field of video games, serves: the user, in search of hidden content that rewards his commitment, faces the reading of a text using his lateral thinking skills.<br>
-By showing and discussing the possible alternative means of transmitting information, the <i>Unconventional Posting</i> project aims to make the user aware of the expressive potential of message processing, inviting him to act independently of the mainstream systems and platforms.</p>
+			<div class="colonna_1_bis">
+				<p><i>Unconventional Posting</i> is the <i>posting</i> on the net of a public message that contains secondary or hidden information, through an <i>unconventional</i> use of the platform. This action is dictated by the desire to share messages addressed to certain groups of users, so that they are not blocked or censored by the system itself.<br>
+In this way, information changes its shape, camouflages itself in the system by imitating its characteristics and structures, evades algorithmic controls. In an environment that favors the pervasiveness of communication, the message spreads by virtue not of its transparency but, on the contrary, of its complexity. Only a careful and aware user &mdash; a user who has the appropriate tools &mdash; can access the information hidden behind/inside the transmitted message. This is what the <i>Easter egg hunt</i> mentality, born in the field of video games, serves: the user, in search of hidden content that rewards his commitment, faces the reading of a text using his lateral thinking skills. By showing and discussing the possible alternative means of transmitting information, the <i>Unconventional Posting</i> project aims to make the user aware of the expressive potential of message processing, inviting him to act independently of the mainstream systems and platforms.</p>
 			</div>
 			<div class="colonna_2">
 				<div id="extLink">
@@ -273,7 +321,7 @@ By showing and discussing the possible alternative means of transmitting informa
 				</div>
 			</div>
 			<div>
-				<div class="colonna_2">
+				<div class="colonna_2_bis">
 					<p><b>AUTORI</b><br>Paolo Barbieri, Eugenio Pancaldi<br>Carlo Andrea Schlatter, Benedetta Stefani<br>Esame di Modulo<br>2020 <a href="https://isiaurbino.net" target="_blank">ISIA URBINO</a>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>AUTORI</b><br>Paolo Barbieri, Eugenio Pancaldi<br>Carlo Andrea Schlatter, Benedetta Stefani<br>Esame di Modulo<br>2020 <a href="https://isiaurbino.net" target="_blank">ISIA URBINO<br></a><i>...ancora qui?</i>
 					</p>
@@ -286,26 +334,36 @@ By showing and discussing the possible alternative means of transmitting informa
 	</div>
 	<canvas class="canvasClass" id="c" width="400px" height="400px" style="border: 0px solid white; cursor: pointer; float: right;">
 	</canvas>
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_1.jpg" id="image_1" style="display: none;" title="Piazza Tienanmen
-	riprodotta in Lego.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_2.jpg" id="image_2" width="15px" style="display: none;" title="Tappeto con infografica
-	sul turismo in Cina.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_3.jpg" id="image_3" style="display: none;" title="Meme su Xi Jinping
-	nascosti in un gioco.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_4.jpg" id="image_4" style="display: none;" title="Proteste per Hong Kong
-	dentro un videogioco.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_5.jpg" id="image_5" style="display: none;" title="Una linea di vestiario
-	che nasconde testi.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_6.jpg" id="image_6" style="display: none;" title="La variante cinese
-	dell'hashtag #MeToo.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_7.jpg" id="image_7" style="display: none;" title="Il tutorial 'bait'
-	di Feroza Aziz.">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_8.jpg" id="image_8" style="display: none;" title="Il messaggio nascosto
-	nel disco di Caparezza.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_1.jpg" id="image_1" style="display: none;" title="&ldquo;Rivoltoso sconosciuto&rdquo;
+	riprodotto in Lego." alt="&ldquo;Tank Man&rdquo; made
+	with Lego bricks.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_2.jpg" id="image_2" width="15px" style="display: none;" title="  Informazioni sensibili
+	nascoste in un tappeto." alt="Sensitive informations
+	embroided in a carpet.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_3.jpg" id="image_3" style="display: none;" title="Meme su Winnie Pooh
+	su videogioco cinese." alt="Winnie Pooh meme in
+	a chinese videogame.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_4.jpg" id="image_4" style="display: none;" title="Proteste di Hong Kong
+	in Animal Crossing." alt="Hong Kong protests
+	on Animal Crossing.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_5.jpg" id="image_5" style="display: none;" title="Steganografia in
+	una linea di vestiti." alt="Steganography
+	in a laundry line.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_6.jpg" id="image_6" style="display: none;" title="Omofono non censurato
+	dell'hashtag #MeToo." alt="#MeToo hashtag's
+	uncensored homophone.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_7.jpg" id="image_7" style="display: none;" title="Il tutorial 'clickbait'
+	di Feroza Aziz." alt="The clickbait tutorial
+	of Feroza Aziz.">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_8.jpg" id="image_8" style="display: none;" title="Messaggio nascosto
+	in &ldquo;Prisoner 709&rdquo;." alt="Hidden message
+	in &ldquo;Prisoner 709&rdquo; track.">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_10.jpg" id="image_9" style="display: none;" title="L'ammiraglio Denton,
-	ostaggio in Vietnam.">
+	ostaggio in Vietnam." alt="Admiral Denton,
+	hostage in Vietnam.">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_9.jpg" id="image_10" style="display: none;" title="Libreria senza censure
-	costruita in Minecraft.">
+	costruita su Minecraft." alt="Uncensored Library
+	built in Minecraft.">
 
 
 
@@ -313,6 +371,8 @@ By showing and discussing the possible alternative means of transmitting informa
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/qrcode.png" id="icon_2" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Painting.png" id="icon_3" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/grid.png" id="icon_4" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/fonting.png" id="icon_5" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language.png" id="icon_6" style="display: none; z-index: 1;">
 
 
 	<div id="img_1_info" class="hidden">
@@ -396,6 +456,38 @@ By showing and discussing the possible alternative means of transmitting informa
 		  hasControls: false,
 		  originX: 0.13,
 		  originY: 0.13,
+		  scaleX: 0.85,
+		  scaleY: 0.85,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+		canvas.add(new fabric.Image(document.getElementById("icon_5"), {
+		  left: 132,
+		  top: 1496,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.02,
+		  originY: 0.02,
+		  scaleX: 0.8,
+		  scaleY: 0.8,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+		canvas.add(new fabric.Image(document.getElementById("icon_6"), {
+		  left: 748,
+		  top: 1716,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.02,
+		  originY: 0.02,
 		  scaleX: 0.85,
 		  scaleY: 0.85,
 		  hoverCursor: 1,
@@ -585,7 +677,7 @@ By showing and discussing the possible alternative means of transmitting informa
 	var diceIcon = document.getElementById("box");
 	/*var diceIcon = canvas.getObjects()[92];*/
 
-
+	var ita = true;
 
 	canvas.on('mouse:dblclick', function (e) {
 	  //check if user clicked an object
@@ -626,82 +718,108 @@ By showing and discussing the possible alternative means of transmitting informa
 	  }
 
 	  if (e.target._element.id === "icon_4") {
-	  	var obj = 96;
-	  	canvas._objects[obj].left = 44;
+	  	var obj = 98;
+	  	canvas._objects[obj-6].left = 0;
+	  	canvas._objects[obj-6].top = 44;
+	  	canvas._objects[obj-5].left = 0;
+	  	canvas._objects[obj-5].top = 176;
+	  	canvas._objects[obj-4].left = 0;
+	  	canvas._objects[obj-4].top = 308;
+	  	canvas._objects[obj-3].left = 0;
+	  	canvas._objects[obj-3].top = 440;
+	  	canvas._objects[obj-2].left = 0;
+	  	canvas._objects[obj-2].top = 572;
+	  	canvas._objects[obj-1].left = 0;
+	  	canvas._objects[obj-1].top = 704;
+
+
+	  	canvas._objects[obj].left = 132;
 	  	canvas._objects[obj].top = 44;
-	  	canvas._objects[obj+1].left = 528;
+	  	canvas._objects[obj+1].left = 572;
 	  	canvas._objects[obj+1].top = 44;
-	  	canvas._objects[obj+2].left = 44;
+	  	canvas._objects[obj+2].left = 132;
 	  	canvas._objects[obj+2].top = 440;
-	  	canvas._objects[obj+3].left = 528;
+	  	canvas._objects[obj+3].left = 572;
 	  	canvas._objects[obj+3].top = 660;
-	  	canvas._objects[obj+4].left = 44;
+	  	canvas._objects[obj+4].left = 132;
 	  	canvas._objects[obj+4].top = 704;
-	  	canvas._objects[obj+5].left = 528;
+	  	canvas._objects[obj+5].left = 572;
 	  	canvas._objects[obj+5].top = 924;
-	  	canvas._objects[obj+6].left = 44;
+	  	canvas._objects[obj+6].left = 132;
 	  	canvas._objects[obj+6].top = 1056;
-	  	canvas._objects[obj+7].left = 528;
+	  	canvas._objects[obj+7].left = 572;
 	  	canvas._objects[obj+7].top = 1188;
-	  	canvas._objects[obj+8].left = 44;
+	  	canvas._objects[obj+8].left = 132;
 	  	canvas._objects[obj+8].top = 1624;
-	  	canvas._objects[obj+9].left = 528;
+	  	canvas._objects[obj+9].left = 572;
 	  	canvas._objects[obj+9].top = 1756;
 
 	  	resizeMe(canvas);
 	  }
-	});
 
-	/*
-	canvas.on('mouse:over', function (e) {
+	  if (e.target._element.id === "icon_5") {
+	  	console.log(document.getElementById("title").style.fontFamily);
+	  	if (document.getElementById("title").style.fontFamily == "ShelleyAllegroBT") {
 
-		var j = window.event;
+	  		document.getElementById("title").style.fontFamily = "Helvetica";
+			document.getElementById("title").style.fontSize = 30 + "px";
+			document.getElementById("title").style.fontWeight = 400;
+			document.getElementById("title").style.top = -20 + "px";
+			return;
+	  	} else {
 
-	    var posX = j.clientX;
-	    var posY = j.clientY;
-	    var subject = canvas._objects[93]
-	    var actualWidth = ((subject.width)*(subject.scaleX));
-	    var actualHeight = ((subject.height)*(subject.scaleY))
+			document.getElementById("title").style.fontFamily = "ShelleyAllegroBT";
+			document.getElementById("title").style.fontSize = 37 + "px";
+			document.getElementById("title").style.fontWeight = 600;
+			document.getElementById("title").style.top = -30 + "px";
+	  		return;
+	  	}
+	  }
 
-	    if ((posX + 8 > subject.left) && (posY > subject.top) && (posX < (subject.left + actualWidth)) && (posY < (subject.top + actualHeight)) ) {
-
-	    	//document.getElementById("img_1_info").classList.toggle("hidden");
-	    	//console.log(window.innerWidth*0.97);
-	    	document.getElementById("img_1_info").style.display = "unset";
-	    	//console.log(subject.left);
-	    	//console.log(subject.top*(window.innerWidth*2));
-	    	//console.log((subject.left + actualWidth)*(window.innerWidth*0.97));
-	    	//console.log((subject.top + actualWidth)*(window.innerWidth*2));
-	    	//console.log(document.getElementById("img_1_info").style.display);
-
-			document.getElementById("img_1_info").style.left = posX + "px";
-	    	document.getElementById("img_1_info").style.top = posY + "px";
-	    } else {
-	    	document.getElementById("img_1_info").style.display = "none";
-	    }
-
-	    
-		if (e.target.cacheKey === "texture1") {
-
-			//document.getElementById("img_1_info").classList.toggle("hidden");
-			//console.log(document.getElementById("img_1_info").classList.contains("hidden"));
-			document.getElementById("img_1_info").style.left = posX + "px";
-	    	document.getElementById("img_1_info").style.top = posY + "px";
-
-			console.log(document.getElementById("img_1_info"));
+	  if (e.target._element.id === "icon_6") {
+	  	ita =! ita;
+	  	if (ita == true) {
+			var lang = document.getElementById("image_1").title;
+		} else {
+			var lang = document.getElementById("image_1").alt;
 		}
-	});*/
+	  }
+
+	  if ((e.target._element.id = "image_1") || (e.target._element.id = "image_2") || (e.target._element.id = "image_3") || (e.target._element.id = "image_4") || (e.target._element.id = "image_5") || (e.target._element.id = "image_6") || (e.target._element.id = "image_7") || (e.target._element.id = "image_8") || (e.target._element.id = "image_9") || (e.target._element.id = "image_10")) {
+	  	console.log(e.target);
+	  }
+
+	});
 
 
 // showCaptions
 	var text = new fabric.Text(document.getElementById("image_1").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var textUk = new fabric.Text(document.getElementById("image_1").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    textAlign: 'center',
+	    top: 6,
 	    originX: 'top',
 	    originY: 'top',
 	});
 	var rect = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var rectUk = new fabric.Rect({
 	    originX: 'top',
 	    originY: 'top',
 	    width: 200,
@@ -714,11 +832,18 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text.width*1.2),
+	     width: (text.width*1.4),
+	});
+	var groupUk = new fabric.Group([ rectUk, textUk ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_1"){
+		if ((e.target._originalElement.id === "image_1") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group.set({
 		    	left: p.x + 10,
@@ -728,6 +853,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_1") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -735,17 +870,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group.set({
 		    	visible: false,
 		    });
+		    groupUk.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group);
+			canvas.remove(groupUk);
 			canvas.renderAll();
 		}
 	});
-
-
+//
 	var text_2 = new fabric.Text(document.getElementById("image_2").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -762,11 +902,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_2.width*1.2),
+	     width: (text_2.width*1.4),
+	});
+	var textUk_2 = new fabric.Text(document.getElementById("image_2").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_2 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_2 = new fabric.Group([ rectUk_2, textUk_2 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_2.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_2"){
+		if ((e.target._originalElement.id === "image_2") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_2.set({
 		    	left: p.x + 10,
@@ -776,6 +940,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_2);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_2") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_2.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_2);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -783,16 +957,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_2.set({
 		    	visible: false,
 		    });
+		    groupUk_2.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_2);
+			canvas.remove(groupUk_2);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_3 = new fabric.Text(document.getElementById("image_3").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -809,11 +989,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_3.width*1.2),
+	     width: (text_3.width*1.4),
+	});
+	var textUk_3 = new fabric.Text(document.getElementById("image_3").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_3 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_3 = new fabric.Group([ rectUk_3, textUk_3 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_3.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_3"){
+		if ((e.target._originalElement.id === "image_3") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_3.set({
 		    	left: p.x + 10,
@@ -823,6 +1027,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_3);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_3") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_3.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_3);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -830,16 +1044,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_3.set({
 		    	visible: false,
 		    });
+		    groupUk_3.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_3);
+			canvas.remove(groupUk_3);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_4 = new fabric.Text(document.getElementById("image_4").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -856,11 +1076,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_4.width*1.2),
+	     width: (text_4.width*1.4),
+	});
+	var textUk_4 = new fabric.Text(document.getElementById("image_4").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_4 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_4 = new fabric.Group([ rectUk_4, textUk_4 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_4.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_4"){
+		if ((e.target._originalElement.id === "image_4") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_4.set({
 		    	left: p.x + 10,
@@ -870,6 +1114,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_4);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_4") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_4.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_4);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -877,16 +1131,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_4.set({
 		    	visible: false,
 		    });
+		    groupUk_4.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_4);
+			canvas.remove(groupUk_4);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_5 = new fabric.Text(document.getElementById("image_5").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -903,11 +1163,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_5.width*1.2),
+	     width: (text_5.width*1.4),
+	});
+	var textUk_5 = new fabric.Text(document.getElementById("image_5").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_5 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_5 = new fabric.Group([ rectUk_5, textUk_5 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_5.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_5"){
+		if ((e.target._originalElement.id === "image_5") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_5.set({
 		    	left: p.x + 10,
@@ -917,6 +1201,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_5);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_5") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_5.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_5);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -924,16 +1218,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_5.set({
 		    	visible: false,
 		    });
+		    groupUk_5.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_5);
+			canvas.remove(groupUk_5);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_6 = new fabric.Text(document.getElementById("image_6").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -950,11 +1250,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_6.width*1.2),
+	     width: (text_6.width*1.4),
+	});
+	var textUk_6 = new fabric.Text(document.getElementById("image_6").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_6 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_6 = new fabric.Group([ rectUk_6, textUk_6 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_6.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_6"){
+		if ((e.target._originalElement.id === "image_6") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_6.set({
 		    	left: p.x + 10,
@@ -964,6 +1288,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_6);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_6") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_6.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_6);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -971,16 +1305,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_6.set({
 		    	visible: false,
 		    });
+		    groupUk_6.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_6);
+			canvas.remove(groupUk_6);
 			canvas.renderAll();
 		}
 	});
 	//
 	var text_7 = new fabric.Text(document.getElementById("image_7").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -997,11 +1337,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_7.width*1.2),
+	     width: (text_7.width*1.4),
+	});
+	var textUk_7 = new fabric.Text(document.getElementById("image_7").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_7 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_7 = new fabric.Group([ rectUk_7, textUk_7 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_7.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_7"){
+		if ((e.target._originalElement.id === "image_7") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_7.set({
 		    	left: p.x + 10,
@@ -1011,6 +1375,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_7);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_7") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_7.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_7);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -1018,16 +1392,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_7.set({
 		    	visible: false,
 		    });
+		    groupUk_7.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_7);
+			canvas.remove(groupUk_7);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_8 = new fabric.Text(document.getElementById("image_8").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -1044,11 +1424,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_8.width*1.2),
+	     width: (text_8.width*1.4),
+	});
+	var textUk_8 = new fabric.Text(document.getElementById("image_8").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_8 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_8 = new fabric.Group([ rectUk_8, textUk_8 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_8.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_8"){
+		if ((e.target._originalElement.id === "image_8") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_8.set({
 		    	left: p.x + 10,
@@ -1058,6 +1462,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_8);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_8") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_8.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_8);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -1065,16 +1479,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_8.set({
 		    	visible: false,
 		    });
+		    groupUk_8.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_8);
+			canvas.remove(groupUk_8);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_9 = new fabric.Text(document.getElementById("image_9").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    top: 6,
+	    textAlign: 'center',
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -1091,11 +1511,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_9.width*1.2),
+	     width: (text_9.width*1.4),
+	});
+	var textUk_9 = new fabric.Text(document.getElementById("image_9").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_9 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_9 = new fabric.Group([ rectUk_9, textUk_9 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_9.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_9"){
+		if ((e.target._originalElement.id === "image_9") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_9.set({
 		    	left: p.x + 10,
@@ -1105,6 +1549,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_9);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_9") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_9.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_9);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -1112,16 +1566,22 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_9.set({
 		    	visible: false,
 		    });
+		    groupUk_9.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_9);
+			canvas.remove(groupUk_9);
 			canvas.renderAll();
 		}
 	});
 //
 	var text_10 = new fabric.Text(document.getElementById("image_10").title, {
-	    fontSize: 20,
+		fontFamily: "Helvetica",
+	    fontSize: 18,
 	    fill: 'rgba(0,0,255)',
-	    top: 5,
+	    textAlign: 'center',
+	    top: 6,
 	    originX: 'top',
 	    originY: 'top',
 	});
@@ -1138,11 +1598,35 @@ By showing and discussing the possible alternative means of transmitting informa
 	     top: 0,
 	     selectable : false,
 	     visible: false,
-	     width: (text_10.width*1.2),
+	     width: (text_10.width*1.4),
+	});
+	var textUk_10 = new fabric.Text(document.getElementById("image_10").alt, {
+		fontFamily: "Helvetica",
+	    fontSize: 18,
+	    fill: 'rgba(0,0,255)',
+	    top: 6,
+	    textAlign: 'center',
+	    originX: 'top',
+	    originY: 'top',
+	});
+	var rectUk_10 = new fabric.Rect({
+	    originX: 'top',
+	    originY: 'top',
+	    width: 200,
+	    height: 60,
+	    fill: 'rgba(255,255,255)',
+	    stroke: "blue",
+	});
+	var groupUk_10 = new fabric.Group([ rectUk_10, textUk_10 ], {
+	     left: 0,
+	     top: 0,
+	     selectable : false,
+	     visible: false,
+	     width: (textUk_10.width*1.4),
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
-		if (e.target._originalElement.id === "image_10"){
+		if ((e.target._originalElement.id === "image_10") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_10.set({
 		    	left: p.x + 10,
@@ -1152,6 +1636,16 @@ By showing and discussing the possible alternative means of transmitting informa
 			e.target.set("opacity", "0.5");
 		    canvas.add(group_10);
 			canvas.renderAll();
+		} if ((e.target._originalElement.id === "image_10") && (ita == false)){
+			var p = canvas.getPointer(e.e);
+		    groupUk_10.set({
+		    	left: p.x + 10,
+		    	top: p.y + 10,
+		    	visible: true,
+		    });
+			e.target.set("opacity", "0.5");
+		    canvas.add(groupUk_10);
+			canvas.renderAll();
 		}
 	});
 	canvas.on('mouse:out', function(e) {
@@ -1159,8 +1653,12 @@ By showing and discussing the possible alternative means of transmitting informa
 			group_10.set({
 		    	visible: false,
 		    });
+		    groupUk_10.set({
+		    	visible: false,
+		    });
 			e.target.set("opacity", "1");
 			canvas.remove(group_10);
+			canvas.remove(groupUk_10);
 			canvas.renderAll();
 		}
 	});
