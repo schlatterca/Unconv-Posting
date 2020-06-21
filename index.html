@@ -236,6 +236,17 @@
 			display: none!important;
 		}
 
+		#blackScreen{
+			z-index: 100;
+  			width: 100%;
+    		height: 100%;
+    		background-color: black;
+    		opacity: 50%;
+    		position: fixed;
+    		overflow: hidden;
+    		top: 0; right: 0; bottom: 0; left: 0;
+		}
+
 		button{
 			position: fixed;
 			top: 50%;
@@ -341,8 +352,8 @@ In this way, information changes its shape, camouflages itself in the system by 
 	nascoste in un tappeto." alt="Sensitive informations
 	embroided in a carpet.">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_3.jpg" id="image_3" style="display: none;" title="Meme su Winnie Pooh
-	su videogioco cinese." alt="Winnie Pooh meme in
-	a chinese videogame.">
+	su videogioco taiwanese." alt="Winnie Pooh meme in
+	a taiwanese videogame.">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_4.jpg" id="image_4" style="display: none;" title="Proteste di Hong Kong
 	in Animal Crossing." alt="Hong Kong protests
 	on Animal Crossing.">
@@ -381,6 +392,11 @@ In this way, information changes its shape, camouflages itself in the system by 
 				<p>Piazza Tienanmen<br>riprodotta in Lego.</p>
 			</div>
 		</div>
+	</div>
+	<div id="blackScreen" class="hidden" onclick="document.getElementById('blackScreen').classList.toggle('hidden')";>
+		<picture>
+			<source src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_1.jpg">
+		</picture>
 	</div>
 
 </body>
@@ -502,51 +518,71 @@ In this way, information changes its shape, camouflages itself in the system by 
 		  left: getRandomInt(0,5)*44,
 		  top: getRandomInt(0,5)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_2"), {
 		  left: getRandomInt(8,13)*44,
 		  top: getRandomInt(0,5)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_3"), {
 		  left: getRandomInt(0,5)*44,
 		  top: getRandomInt(8,13)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_4"), {
 		  left: getRandomInt(8,13)*44,
 		  top: getRandomInt(8,13)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_5"), {
 		  left: getRandomInt(0,5)*44,
 		  top: getRandomInt(16,21)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_6"), {
 		  left: getRandomInt(8,13)*44,
 		  top: getRandomInt(16,21)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_7"), {
 		  left: getRandomInt(0,5)*44,
 		  top: getRandomInt(24,29)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_8"), {
 		  left: getRandomInt(8,13)*44,
 		  top: getRandomInt(24,29)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_9"), {
 		  left: getRandomInt(0,5)*44,
 		  top: getRandomInt(34,39)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 		canvas.add(new fabric.Image(document.getElementById("image_10"), {
 		  left: getRandomInt(8,13)*44,
 		  top: getRandomInt(34,39)*44,
 		  opacity: 1,
+		  transparentCorners: false,
+		  cornerColor: "rgba(255,255,255)",
 		}));
 	}
 
@@ -645,17 +681,6 @@ In this way, information changes its shape, camouflages itself in the system by 
 	  });
 	});
 
-	/*
-	const titleElement = document.createElement("h2");
-		titleElement.className = "title";
-		titleElement.innerHTML = "Unconventional Posting";
-		document.body.append(titleElement);
-
-	const infoButton = document.createElement("h2");
-		infoButton.className = "infoButton";
-		infoButton.innerHTML = "+";
-		document.body.append(infoButton);*/
-
 
 	function resizeMe(element) {
 		element.setZoom(window.innerWidth*0.001);
@@ -670,126 +695,124 @@ In this way, information changes its shape, camouflages itself in the system by 
 
 	resizeMe(canvas);
 
-	/*
-	canvas.setWidth(originalWidth * canvas.getZoom());
-	canvas.setHeight(originalHeight * canvas.getZoom());*/
-
-	var diceIcon = document.getElementById("box");
-	/*var diceIcon = canvas.getObjects()[92];*/
-
 	var ita = true;
 
 	canvas.on('mouse:dblclick', function (e) {
-	  //check if user clicked an object
-	  if (e.target._element.id === "icon_1") {
-	  	//console.log(canvas._objects[93].left);
-	  	//canvas._objects[93].left = (getRandomInt(0,5)*44) + "px";
-	  	canvas.clear();
-		// create grid
-		for (var i = 0; i < (1984 / grid); i++) {
-		  canvas.add(new fabric.Line([ i * grid, 0, i * grid, 1984], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }));
-		  canvas.add(new fabric.Line([ 0, i * grid, 1984, i * grid], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }))
+
+		//check if user clicked an object
+		if (e.target._element.id === "icon_1") {
+		//console.log(canvas._objects[93].left);
+		//canvas._objects[93].left = (getRandomInt(0,5)*44) + "px";
+			canvas.clear();
+			// create grid
+			for (var i = 0; i < (1984 / grid); i++) {
+				canvas.add(new fabric.Line([ i * grid, 0, i * grid, 1984], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }));
+				canvas.add(new fabric.Line([ 0, i * grid, 1984, i * grid], { stroke: '#fff', strokeWidth: (grid/15), selectable: false, hoverCursor: 1, moveCursor: 1 }))
+			}
+		loadImages();
+		return;
 		}
-	  	loadImages();
 
-	  }
+		if (e.target._element.id === "icon_2") {
+		  	window.open("https://schlatterca.github.io/Unconv-Posting/qrcode.html",'qrcode');
+		  	return;
+		}
 
-	  if (e.target._element.id === "icon_2") {
-	  	window.open("https://schlatterca.github.io/Unconv-Posting/qrcode.html",'qrcode');
-	  }
+		if (e.target._element.id === "icon_3") {
+			if (document.body.style.backgroundColor === "blue") {
+		    	document.body.style.backgroundColor = "red";
+		    	document.getElementById("box").style.backgroundColor = "red";
+		    	document.getElementById("infoButton").style.backgroundColor = "red";
+		    	return;
+		    } if (document.body.style.backgroundColor === "red") {
+		    	document.body.style.backgroundColor = "lime";
+		    	document.getElementById("box").style.backgroundColor = "lime";
+		    	document.getElementById("infoButton").style.backgroundColor = "lime";
+		    	return;
+		    } if (document.body.style.backgroundColor === "lime") {
+		    	document.body.style.backgroundColor = "blue";
+		    	document.getElementById("box").style.backgroundColor = "blue";
+		    	document.getElementById("infoButton").style.backgroundColor = "blue";
+		    	return;
+		    }
+		}
 
-	  if (e.target._element.id === "icon_3") {
-	  	if (document.body.style.backgroundColor === "blue") {
-	    	document.body.style.backgroundColor = "red";
-	    	document.getElementById("box").style.backgroundColor = "red";
-	    	document.getElementById("infoButton").style.backgroundColor = "red";
-	    	return;
-	    } if (document.body.style.backgroundColor === "red") {
-	    	document.body.style.backgroundColor = "lime";
-	    	document.getElementById("box").style.backgroundColor = "lime";
-	    	document.getElementById("infoButton").style.backgroundColor = "lime";
-	    	return;
-	    } if (document.body.style.backgroundColor === "lime") {
-	    	document.body.style.backgroundColor = "blue";
-	    	document.getElementById("box").style.backgroundColor = "blue";
-	    	document.getElementById("infoButton").style.backgroundColor = "blue";
-	    	return;
-	    }
-	  }
+		if (e.target._element.id === "icon_4") {
+			var obj = 98;
+			canvas._objects[obj-6].left = 0;
+			canvas._objects[obj-6].top = 44;
+			canvas._objects[obj-5].left = 0;
+			canvas._objects[obj-5].top = 176;
+			canvas._objects[obj-4].left = 0;
+			canvas._objects[obj-4].top = 308;
+			canvas._objects[obj-3].left = 0;
+			canvas._objects[obj-3].top = 440;
+			canvas._objects[obj-2].left = 0;
+			canvas._objects[obj-2].top = 572;
+			canvas._objects[obj-1].left = 0;
+			canvas._objects[obj-1].top = 704;
 
-	  if (e.target._element.id === "icon_4") {
-	  	var obj = 98;
-	  	canvas._objects[obj-6].left = 0;
-	  	canvas._objects[obj-6].top = 44;
-	  	canvas._objects[obj-5].left = 0;
-	  	canvas._objects[obj-5].top = 176;
-	  	canvas._objects[obj-4].left = 0;
-	  	canvas._objects[obj-4].top = 308;
-	  	canvas._objects[obj-3].left = 0;
-	  	canvas._objects[obj-3].top = 440;
-	  	canvas._objects[obj-2].left = 0;
-	  	canvas._objects[obj-2].top = 572;
-	  	canvas._objects[obj-1].left = 0;
-	  	canvas._objects[obj-1].top = 704;
+			canvas._objects[obj].left = 132;
+			canvas._objects[obj].top = 44;
+			canvas._objects[obj+1].left = 572;
+			canvas._objects[obj+1].top = 44;
+			canvas._objects[obj+2].left = 132;
+			canvas._objects[obj+2].top = 440;
+			canvas._objects[obj+3].left = 572;
+			canvas._objects[obj+3].top = 660;
+			canvas._objects[obj+4].left = 132;
+			canvas._objects[obj+4].top = 704;
+			canvas._objects[obj+5].left = 572;
+			canvas._objects[obj+5].top = 924;
+			canvas._objects[obj+6].left = 132;
+			canvas._objects[obj+6].top = 1056;
+			canvas._objects[obj+7].left = 572;
+			canvas._objects[obj+7].top = 1188;
+			canvas._objects[obj+8].left = 132;
+			canvas._objects[obj+8].top = 1624;
+			canvas._objects[obj+9].left = 572;
+			canvas._objects[obj+9].top = 1756;
 
-
-	  	canvas._objects[obj].left = 132;
-	  	canvas._objects[obj].top = 44;
-	  	canvas._objects[obj+1].left = 572;
-	  	canvas._objects[obj+1].top = 44;
-	  	canvas._objects[obj+2].left = 132;
-	  	canvas._objects[obj+2].top = 440;
-	  	canvas._objects[obj+3].left = 572;
-	  	canvas._objects[obj+3].top = 660;
-	  	canvas._objects[obj+4].left = 132;
-	  	canvas._objects[obj+4].top = 704;
-	  	canvas._objects[obj+5].left = 572;
-	  	canvas._objects[obj+5].top = 924;
-	  	canvas._objects[obj+6].left = 132;
-	  	canvas._objects[obj+6].top = 1056;
-	  	canvas._objects[obj+7].left = 572;
-	  	canvas._objects[obj+7].top = 1188;
-	  	canvas._objects[obj+8].left = 132;
-	  	canvas._objects[obj+8].top = 1624;
-	  	canvas._objects[obj+9].left = 572;
-	  	canvas._objects[obj+9].top = 1756;
-
-	  	resizeMe(canvas);
-	  }
-
-	  if (e.target._element.id === "icon_5") {
-	  	console.log(document.getElementById("title").style.fontFamily);
-	  	if (document.getElementById("title").style.fontFamily == "ShelleyAllegroBT") {
-
-	  		document.getElementById("title").style.fontFamily = "Helvetica";
-			document.getElementById("title").style.fontSize = 30 + "px";
-			document.getElementById("title").style.fontWeight = 400;
-			document.getElementById("title").style.top = -20 + "px";
+			resizeMe(canvas);
 			return;
-	  	} else {
-
-			document.getElementById("title").style.fontFamily = "ShelleyAllegroBT";
-			document.getElementById("title").style.fontSize = 37 + "px";
-			document.getElementById("title").style.fontWeight = 600;
-			document.getElementById("title").style.top = -30 + "px";
-	  		return;
-	  	}
-	  }
-
-	  if (e.target._element.id === "icon_6") {
-	  	ita =! ita;
-	  	if (ita == true) {
-			var lang = document.getElementById("image_1").title;
-		} else {
-			var lang = document.getElementById("image_1").alt;
 		}
-	  }
 
-	  if ((e.target._element.id = "image_1") || (e.target._element.id = "image_2") || (e.target._element.id = "image_3") || (e.target._element.id = "image_4") || (e.target._element.id = "image_5") || (e.target._element.id = "image_6") || (e.target._element.id = "image_7") || (e.target._element.id = "image_8") || (e.target._element.id = "image_9") || (e.target._element.id = "image_10")) {
-	  	console.log(e.target);
-	  }
+		if (e.target._element.id === "icon_5") {
+			console.log(document.getElementById("title").style.fontFamily);
+			if (document.getElementById("title").style.fontFamily == "ShelleyAllegroBT") {
 
+				document.getElementById("title").style.fontFamily = "Helvetica";
+				document.getElementById("title").style.fontSize = 30 + "px";
+				document.getElementById("title").style.fontWeight = 400;
+				document.getElementById("title").style.top = -20 + "px";
+				return;
+		  	} else {
+
+				document.getElementById("title").style.fontFamily = "ShelleyAllegroBT";
+				document.getElementById("title").style.fontSize = 37 + "px";
+				document.getElementById("title").style.fontWeight = 600;
+				document.getElementById("title").style.top = -30 + "px";
+		  		return;
+		  	}
+		}
+
+		if (e.target._element.id === "icon_6") {
+			ita =! ita;
+			if (ita == true) {
+				var lang = document.getElementById("image_1").title;
+				return;
+			} else {
+				var lang = document.getElementById("image_1").alt;
+				return;
+			}
+		}
+		  
+		if ((e.target._originalElement.id == "image_1") || (e.target._originalElement.id == "image_2") ||(e.target._originalElement.id == "image_3") ||(e.target._originalElement.id == "image_4") ||(e.target._originalElement.id == "image_5") ||(e.target._originalElement.id == "image_6") ||(e.target._originalElement.id == "image_7") ||(e.target._originalElement.id == "image_8") ||(e.target._originalElement.id == "image_9") ||(e.target._originalElement.id == "image_10")) {
+			document.getElementById("blackScreen").classList.toggle("hidden");
+			return;
+		}
 	});
+
 
 
 // showCaptions
@@ -843,7 +866,11 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+
+		//console.log(e.target);
+
 		if ((e.target._originalElement.id === "image_1") && (ita == true)){
+			console.log("hello");
 			var p = canvas.getPointer(e.e);
 		    group.set({
 		    	left: p.x + 10,
@@ -854,6 +881,7 @@ In this way, information changes its shape, camouflages itself in the system by 
 		    canvas.add(group);
 			canvas.renderAll();
 		} if ((e.target._originalElement.id === "image_1") && (ita == false)){
+			console.log("hello");
 			var p = canvas.getPointer(e.e);
 		    groupUk.set({
 		    	left: p.x + 10,
@@ -1675,9 +1703,6 @@ In this way, information changes its shape, camouflages itself in the system by 
 		} else {
 			canvas.setHeight(100);
 		}
-		//document.body.background_color("rgba(255,0,0)");
-	    //document.getElementById("titleElement").classList.toggle("hidden");
-	    //document.getElementById("credits").classList.toggle("hidden");
 
 	    if ((document.body.style.backgroundColor === "blue") || (document.body.style.backgroundColor === "red") || (document.body.style.backgroundColor === "lime")) {
 	    	document.body.style.backgroundColor = "white";
