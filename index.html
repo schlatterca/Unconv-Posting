@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Unconv-posting.com</title>
+	<title>Unconv-posting</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<script src="fabric.js"></script>
 	<style type="text/css">
@@ -22,12 +22,20 @@
     		top: 0; right: 0; bottom: 0; left: 0;
 		}
 		
+		#c {
+			width: 400px;
+		}
+
 		canvas.canvasClass {
 			width: 100%;
 		}
 
 		.canvas-container {
 			height: 80px;
+		}
+
+		.lower-canvas {
+			width: 30vw;
 		}
 
 		#mydivheader {
@@ -106,6 +114,7 @@
 			position: fixed;
 			top: 0px;
 			margin-top: 10px;
+			outline: 0;
 		}
 
 		.rotate{
@@ -240,7 +249,7 @@
 			z-index: 100;
   			width: 100%;
     		height: 100%;
-    		background-color: black;
+    		background-color: blue;
     		opacity: 50%;
     		position: fixed;
     		overflow: hidden;
@@ -343,7 +352,7 @@ In this way, information changes its shape, camouflages itself in the system by 
 		
 
 	</div>
-	<canvas class="canvasClass" id="c" width="400px" height="400px" style="border: 0px solid white; cursor: pointer; float: right;">
+	<canvas class="lower-canvas" id="c" width="400px" height="400px" style="border: 0px solid white; cursor: pointer; float: right;">
 	</canvas>
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/image_1.jpg" id="image_1" style="display: none;" title="&ldquo;Rivoltoso sconosciuto&rdquo;
 	riprodotto in Lego." alt="&ldquo;Tank Man&rdquo; made
@@ -384,6 +393,7 @@ In this way, information changes its shape, camouflages itself in the system by 
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/grid.png" id="icon_4" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/fonting.png" id="icon_5" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language.png" id="icon_6" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/umbrella.png" id="icon_7" style="display: none; z-index: 1;">
 
 
 	<div id="img_1_info" class="hidden">
@@ -506,6 +516,22 @@ In this way, information changes its shape, camouflages itself in the system by 
 		  originY: 0.02,
 		  scaleX: 0.85,
 		  scaleY: 0.85,
+		  hoverCursor: 1,
+		  moveCursor: 1,
+		  hasBorders: false,
+
+		}));
+
+		canvas.add(new fabric.Image(document.getElementById("icon_7"), {
+		  left: 440,
+		  top: 1848,
+		  angle: 0,
+		  opacity: 1,
+		  hasControls: false,
+		  originX: 0.08,
+		  originY: 0.08,
+		  scaleX: 0.43,
+		  scaleY: 0.43,
 		  hoverCursor: 1,
 		  moveCursor: 1,
 		  hasBorders: false,
@@ -681,7 +707,6 @@ In this way, information changes its shape, camouflages itself in the system by 
 	  });
 	});
 
-
 	function resizeMe(element) {
 		element.setZoom(window.innerWidth*0.001);
 		element.setWidth(window.innerWidth*0.97);
@@ -738,19 +763,21 @@ In this way, information changes its shape, camouflages itself in the system by 
 		}
 
 		if (e.target._element.id === "icon_4") {
-			var obj = 98;
+			var obj = 99;
+			canvas._objects[obj-7].left = 0;
+			canvas._objects[obj-7].top = 44;
 			canvas._objects[obj-6].left = 0;
-			canvas._objects[obj-6].top = 44;
+			canvas._objects[obj-6].top = 176;
 			canvas._objects[obj-5].left = 0;
-			canvas._objects[obj-5].top = 176;
+			canvas._objects[obj-5].top = 308;
 			canvas._objects[obj-4].left = 0;
-			canvas._objects[obj-4].top = 308;
+			canvas._objects[obj-4].top = 440;
 			canvas._objects[obj-3].left = 0;
-			canvas._objects[obj-3].top = 440;
+			canvas._objects[obj-3].top = 572;
 			canvas._objects[obj-2].left = 0;
-			canvas._objects[obj-2].top = 572;
+			canvas._objects[obj-2].top = 704;
 			canvas._objects[obj-1].left = 0;
-			canvas._objects[obj-1].top = 704;
+			canvas._objects[obj-1].top = 836;
 
 			canvas._objects[obj].left = 132;
 			canvas._objects[obj].top = 44;
@@ -810,6 +837,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 		if ((e.target._originalElement.id == "image_1") || (e.target._originalElement.id == "image_2") ||(e.target._originalElement.id == "image_3") ||(e.target._originalElement.id == "image_4") ||(e.target._originalElement.id == "image_5") ||(e.target._originalElement.id == "image_6") ||(e.target._originalElement.id == "image_7") ||(e.target._originalElement.id == "image_8") ||(e.target._originalElement.id == "image_9") ||(e.target._originalElement.id == "image_10")) {
 			document.getElementById("blackScreen").classList.toggle("hidden");
 			return;
+		}
+
+		if (e.target._element.id === "icon_7") {
+			window.open("https://docs.google.com/spreadsheets/d/1rf60AEdnfhDXw0TGRcvFAer8g7fIVXqaNMRhpm2eg5E/edit?usp=sharing",'Hong Kong')
 		}
 	});
 
