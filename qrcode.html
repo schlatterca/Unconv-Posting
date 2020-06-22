@@ -6,11 +6,29 @@
 	<script src="fabric.js"></script>
 	<style type="text/css">
 		::selection {
-  		background: rgba(220, 220, 220);
+  			background: rgba(220, 220, 220);
+		}
+
+		::-webkit-scrollbar {
+    		display: auto;
+		}
+
+		body{
+            overflow: auto;
+        }
+
+        #box {
+
+		    z-index: 100;
+  			width:100%;
+    		height: 60px;
+    		background-color: white;
+    		position: fixed;
+    		overflow: hidden;
+    		top: 0; right: 0; bottom: 0; left: 0;
 		}
 
 		.title{
-			z-index: 101;
 			color: rgba(0, 0, 255);
 			font-family: "Helvetica", "Arial", Sans-Serif;
 			/*font-family: "shelleyregular";*/
@@ -23,27 +41,29 @@
 			margin-top: 35px;	
 		}
 		.questions{
-			z-index: 101;
 			color: rgba(0, 0, 255);
 			font-family: "Helvetica", "Arial", Sans-Serif;
 			/*font-family: "shelleyregular";*/
 			font-weight: 400;
 			font-style: normal;
 			font-size: 20px;
-			position: fixed;
+			position: relative;
 			padding-left: 1vw;
 			top: 60px;
+			overflow: scroll;
 		}
 	</style>
 </head>
-<body>
-	<div class="title">
-		<a>Unconventional Posting</a>
+<body style="overflow: scroll">
+	<div id="box">
+		<div class="title">
+			<a>Unconventional Posting</a>
+		</div>
 	</div>
 	<div class="questions">
 		<a><b>ORIZZONTALI</b><br><b>1.</b> Istituto Superiore per le Industrie Artistiche.<br><b>2.</b> La citt&agrave di Raffaello.<br><b>4.</b> Il Babbo Natale degli americani.<br><b>5.</b> La Ferragni influencer.<br><b>8.</b> Non imprigionata, svincolata.<br><br><b>VERTICALI</b><br><b>3.</b> Una villa senza doppie.<br><b>6.</b> Il numero di mesi in tre anni.<br><b>7.</b> La chiede il turista per strada.<br><b>9.</b> N&eacute solida n&eacute gassosa.<br><b>10.</b> Il contrario di &ldquo;privata&rdquo;.<br></a>
 		<br>
-		<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Gif_Unconv_4fps.gif" alt="Parkour parkour!"/>
+		<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Gif_Unconv_4fps.gif" alt="Easter Egg" width="98%"/>
 	</div>
 </body>
 </html>
