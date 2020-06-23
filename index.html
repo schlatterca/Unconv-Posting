@@ -451,8 +451,8 @@ In this way, information changes its shape, camouflages itself in the system by 
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Painting.png" id="icon_3" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/grid.png" id="icon_4" style="display: none; z-index: 1;">
 	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/fonting.png" id="icon_5" style="display: none; z-index: 1;">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language.png" id="icon_6" style="display: none; z-index: 1;">
-	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/umbrella.png" id="icon_7" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png" id="icon_6" style="display: none; z-index: 1;">
+	<img src="https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/ombrello.png" id="icon_7" style="display: none; z-index: 1;">
 
 
 	<div id="img_1_info" class="hidden">
@@ -595,10 +595,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 		  angle: 0,
 		  opacity: 1,
 		  hasControls: false,
-		  originX: 0.08,
-		  originY: 0.08,
-		  scaleX: 0.43,
-		  scaleY: 0.43,
+		  originX: 0.02,
+		  originY: 0.02,
+		  scaleX: 0.85,
+		  scaleY: 0.85,
 		  hoverCursor: 1,
 		  moveCursor: 1,
 		  hasBorders: false,
@@ -894,9 +894,13 @@ In this way, information changes its shape, camouflages itself in the system by 
 			ita =! ita;
 			if (ita == true) {
 				var lang = document.getElementById("image_1").title;
+				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png"
+				canvas.renderAll();
 				return;
 			} else {
 				var lang = document.getElementById("image_1").alt;
+				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_UK.png"
+				canvas.renderAll();
 				return;
 			}
 		}
