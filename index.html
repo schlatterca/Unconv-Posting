@@ -189,7 +189,7 @@
 			padding: 10px;
 			border: 2px solid blue;
 			border-style: solid solid hidden solid;
-			height: 180px;
+			height: 240px;
 			overflow: scroll;
 		}
 
@@ -941,9 +941,11 @@ In this way, information changes its shape, camouflages itself in the system by 
 			if (ita == true) {
 				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png"
 				canvas.renderAll();
+				resizeMe(canvas);
 			} else {
 				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_UK.png"
 				canvas.renderAll();
+				resizeMe(canvas);
 			}
 			canvas.renderAll();
 			resizeMe(canvas);
