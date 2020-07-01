@@ -99,7 +99,9 @@
 			letter-spacing: 0.5px;
 			position: fixed;
 			padding-left: 1vw;
-			margin-top: 35px;	
+			margin-top: 35px;
+
+			cursor: url('https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/up.png'), auto;
 		}
 
 		#infoButton{
@@ -939,16 +941,21 @@ In this way, information changes its shape, camouflages itself in the system by 
 		if (e.target._element.id === "icon_6") {
 			ita =! ita;
 			if (ita == true) {
-				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png"
-				canvas.renderAll();
-				resizeMe(canvas);
+				/*e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png"*/
+				canvas._objects[97]._element.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_ITA.png";
+
+				canvas.on('mouse:move', function() {
+					canvas.renderAll();
+				});
 			} else {
-				e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_UK.png"
-				canvas.renderAll();
-				resizeMe(canvas);
+				/*e.target._originalElement.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_UK.png"*/
+				canvas._objects[97]._element.src = "https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/language_UK.png";
+
+				canvas.on('mouse:move', function() {
+					canvas.renderAll();
+				});
+
 			}
-			canvas.renderAll();
-			resizeMe(canvas);
 		}
 	});
 
@@ -1007,6 +1014,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	canvas.on('mouse:move', function(e) {
 
 		//console.log(e.target);
+
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
 
 		if ((e.target._originalElement.id === "image_1") && (ita == true)){
 			var p = canvas.getPointer(e.e);
@@ -1095,6 +1106,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_2") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_2.set({
@@ -1182,6 +1197,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_3") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_3.set({
@@ -1269,6 +1288,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_4") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_4.set({
@@ -1356,6 +1379,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_5") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_5.set({
@@ -1443,6 +1470,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_6") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_6.set({
@@ -1530,6 +1561,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_7") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_7.set({
@@ -1617,6 +1652,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_8") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_8.set({
@@ -1704,6 +1743,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_9") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_9.set({
@@ -1791,6 +1834,10 @@ In this way, information changes its shape, camouflages itself in the system by 
 	});
 	canvas.renderAll();
 	canvas.on('mouse:move', function(e) {
+		if ((e.target == null) || (e.target.stroke == "#fff")) {
+			return;
+		}
+
 		if ((e.target._originalElement.id === "image_10") && (ita == true)){
 			var p = canvas.getPointer(e.e);
 		    group_10.set({
